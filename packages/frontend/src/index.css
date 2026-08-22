@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    background: #020617;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    background: #020617;
+    color: #e2e8f0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button:not(:disabled),
+  select:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled {
+    cursor: not-allowed;
+  }
+
+  ::selection {
+    background: rgba(16, 185, 129, 0.3);
+    color: #f8fafc;
+  }
+
+  :focus-visible {
+    outline: 2px solid #34d399 !important;
+    outline-offset: 2px;
+  }
+
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.22);
+  }
+}
+
+@layer components {
+  .control-base {
+    min-height: 2.5rem;
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    background-color: #020617;
+    color: #e2e8f0;
+    transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+  }
+
+  .control-base::placeholder {
+    color: #64748b;
+  }
+
+  .btn-base {
+    min-height: 2.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
+  }
+
+  .btn-base:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+
+  .icon-btn {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 0.5rem;
+  }
+}
+
+select,
+option {
+  background-color: #020617 !important;
+  color: #e2e8f0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

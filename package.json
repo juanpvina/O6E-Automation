@@ -1,0 +1,17 @@
+{
+  "name": "opencode-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @opencode/shared && npm run build -w @opencode/backend && npm run build -w @opencode/frontend",
+    "dev": "concurrently \"npm run dev -w @opencode/backend\" \"npm run dev -w @opencode/frontend\"",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.5.4",
+    "vitest": "^4.1.11"
+  }
+}

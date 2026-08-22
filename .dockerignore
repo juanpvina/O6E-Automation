@@ -1,0 +1,21 @@
+# Exclude source‑control and CI artefacts
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+README.md
+*.md
+
+# Node modules – we install them inside the image
+node_modules
+packages/**/node_modules
+
+# Build artefacts (they’ll be generated in the container)
+dist
+build
+packages/**/dist
+packages/**/build
+
+# Local environment files
+.env
+*.log
